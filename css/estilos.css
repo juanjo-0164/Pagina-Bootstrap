@@ -2,15 +2,66 @@ html {
     scroll-behavior: smooth;
 }
 
+body {
+    background: #eef1f6;
+}
+
+.barra {
+    background: #1d3557;
+}
+
+.portada {
+    background: #1d3557;
+    color: white;
+    padding: 48px 32px;
+    border-radius: 12px;
+    border-bottom: 6px solid #ffc107;
+}
+
+.portada h1 {
+    font-weight: 700;
+}
+
+.tema {
+    background: white;
+    padding: 28px;
+    margin-bottom: 24px;
+    border-radius: 12px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
 h2 {
-    padding-top: 60px;
-    margin-top: -40px;
+    scroll-margin-top: 80px;
+    margin-bottom: 16px;
+    padding-left: 12px;
+    border-left: 6px solid #ffc107;
+    color: #1d3557;
+    font-size: 1.6rem;
+}
+
+h5 {
+    color: #1d3557;
 }
 
 pre {
-    background: #f1f1f1;
-    padding: 10px;
-    border: 1px solid #ccc;
+    background: #1e2433;
+    color: #e9ecef;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.card {
+    border: 1px solid #dde3ee;
+    border-radius: 10px;
+}
+
+.table th {
+    background: #e9eef7;
+}
+
+footer {
+    border-top: 4px solid #ffc107;
 }
 
 /* 2.3 herencia */
