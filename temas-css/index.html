@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temas de CSS</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Temas de CSS</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#t21">2.1</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#t22">2.2</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#t23">2.3</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#t24">2.4</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#t25">2.5</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#t26">2.6</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#t27">2.7</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#t28">2.8</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#t29">2.9</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-4">
+
+        <div class="p-4 mb-4 bg-light rounded">
+            <h1>Temas de CSS</h1>
+            <p class="mb-0">Resumen de los temas 2.1 a 2.9 con un ejemplo de cada uno. Los ejemplos están hechos con CSS de verdad, no son imágenes.</p>
+        </div>
+
+        <!-- 2.1 -->
+        <h2 id="t21">2.1 Estructura y sintaxis</h2>
+        <p>Una regla de CSS tiene un selector, y entre llaves van las propiedades con su valor.</p>
+<pre>selector {
+  propiedad: valor;
+}
+
+p {
+  color: blue;
+  font-size: 18px;
+}</pre>
+        <p>En el ejemplo el selector es <b>p</b>, las propiedades son <b>color</b> y <b>font-size</b>, y los valores son <b>blue</b> y <b>18px</b>. Cada declaración termina en punto y coma.</p>
+        <div class="alert alert-warning">Si se olvida el punto y coma o la llave de cierre, esa regla no funciona.</div>
+        <p>Selectores básicos:</p>
+        <ul>
+            <li><b>p</b>: todos los párrafos</li>
+            <li><b>.nota</b>: todo lo que tenga class="nota"</li>
+            <li><b>#logo</b>: el elemento con id="logo"</li>
+        </ul>
+
+        <hr class="my-4">
+
+        <!-- 2.2 -->
+        <h2 id="t22">2.2 Tipos de incorporación</h2>
+        <ul class="nav nav-tabs">
+            <li class="nav-item"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#interno" type="button">Interno</button></li>
+            <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#externo" type="button">Externo</button></li>
+            <li class="nav-item"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#enlinea" type="button">En línea</button></li>
+        </ul>
+        <div class="tab-content border border-top-0 p-3 mb-3">
+            <div class="tab-pane fade show active" id="interno">
+                <p>Va dentro de la etiqueta style en el head del mismo HTML.</p>
+<pre>&lt;style&gt;
+  p { color: blue; }
+&lt;/style&gt;</pre>
+            </div>
+            <div class="tab-pane fade" id="externo">
+                <p>Va en un archivo .css aparte y se conecta con link. Es el que más se usa.</p>
+<pre>&lt;link rel="stylesheet" href="css/estilos.css"&gt;</pre>
+            </div>
+            <div class="tab-pane fade" id="enlinea">
+                <p>Va directo en la etiqueta con el atributo style. Solo afecta a ese elemento.</p>
+<pre>&lt;p style="color: blue;"&gt;Hola&lt;/p&gt;</pre>
+            </div>
+        </div>
+
+        <hr class="my-4">
+
+        <!-- 2.3 -->
+        <h2 id="t23">2.3 Identación, herencias y comentarios</h2>
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Identación</h5>
+                        <p class="card-text">Dejar espacios al inicio de las líneas para que el código se entienda mejor.</p>
+<pre>.caja {
+  color: red;
+  margin: 0;
+}</pre>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Herencia</h5>
+                        <p class="card-text">Los hijos heredan algunas propiedades del padre, como el color de la letra.</p>
+                        <div class="padre">
+                            Soy el padre
+                            <p class="mb-0">Soy el hijo y tengo el mismo color, pero el borde no se heredó.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">Comentarios</h5>
+                        <p class="card-text">El navegador los ignora. Se escriben así:</p>
+<pre>/* comentario */
+p {
+  color: blue;
+}</pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr class="my-4">
+
+        <!-- 2.4 -->
+        <h2 id="t24">2.4 Niveles de especificidad</h2>
+        <p>Si dos reglas chocan, gana la que tenga más peso.</p>
+        <table class="table table-bordered">
+            <tr><th>Tipo</th><th>Ejemplo</th><th>Peso</th></tr>
+            <tr><td>En línea</td><td>style="..."</td><td>1000</td></tr>
+            <tr><td>ID</td><td>#titulo</td><td>100</td></tr>
+            <tr><td>Clase, atributo, pseudo-clase</td><td>.nota, :hover</td><td>10</td></tr>
+            <tr><td>Etiqueta, pseudo-elemento</td><td>p, ::before</td><td>1</td></tr>
+        </table>
+<pre>p { color: red; }
+.nota { color: blue; }
+#especial { color: green; }
+
+&lt;p id="especial" class="nota"&gt;...&lt;/p&gt;</pre>
+        <div class="demo-esp">
+            <p id="especial" class="nota">Este párrafo se ve verde porque el id pesa más que la clase y la etiqueta.</p>
+        </div>
+        <p>Si hay empate gana la regla que esté más abajo. El <b>!important</b> le gana a todo pero es mejor no abusar de él.</p>
+
+        <hr class="my-4">
+
+        <!-- 2.5 -->
+        <h2 id="t25">2.5 Flexbox, grid y breakpoints</h2>
+
+        <h5>Flexbox</h5>
+        <p>Pone los elementos en fila o en columna. Con justify-content se reparte el espacio.</p>
+<pre>.contenedor {
+  display: flex;
+  justify-content: space-between;
+}</pre>
+        <p class="mb-1">flex-start</p>
+        <div class="flex" style="justify-content: flex-start;"><div>1</div><div>2</div><div>3</div></div>
+        <p class="mb-1 mt-2">center</p>
+        <div class="flex" style="justify-content: center;"><div>1</div><div>2</div><div>3</div></div>
+        <p class="mb-1 mt-2">space-between</p>
+        <div class="flex" style="justify-content: space-between;"><div>1</div><div>2</div><div>3</div></div>
+
+        <h5 class="mt-4">Grid</h5>
+        <p>Pone los elementos en filas y columnas.</p>
+<pre>.contenedor {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}</pre>
+        <div class="grid"><div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div></div>
+
+        <h5 class="mt-4">Breakpoints</h5>
+        <p>Son los anchos de pantalla donde cambia el diseño. Si cambias el tamaño de la ventana se ve cómo se acomodan estas cajas:</p>
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-3 mb-2"><div class="caja">col-12 col-md-6 col-lg-3</div></div>
+            <div class="col-12 col-md-6 col-lg-3 mb-2"><div class="caja">col-12 col-md-6 col-lg-3</div></div>
+            <div class="col-12 col-md-6 col-lg-3 mb-2"><div class="caja">col-12 col-md-6 col-lg-3</div></div>
+            <div class="col-12 col-md-6 col-lg-3 mb-2"><div class="caja">col-12 col-md-6 col-lg-3</div></div>
+        </div>
+        <table class="table table-striped table-bordered">
+            <tr><th>Nombre</th><th>Prefijo</th><th>Desde</th></tr>
+            <tr><td>Extra small</td><td>ninguno</td><td>0 px</td></tr>
+            <tr><td>Small</td><td>sm</td><td>576 px</td></tr>
+            <tr><td>Medium</td><td>md</td><td>768 px</td></tr>
+            <tr><td>Large</td><td>lg</td><td>992 px</td></tr>
+            <tr><td>Extra large</td><td>xl</td><td>1200 px</td></tr>
+            <tr><td>XXL</td><td>xxl</td><td>1400 px</td></tr>
+        </table>
+
+        <hr class="my-4">
+
+        <!-- 2.6 -->
+        <h2 id="t26">2.6 Media queries</h2>
+        <p>Sirven para que la página se vea bien en celular, tablet y computador. Dice: si la pantalla es de tal ancho, aplica estos estilos.</p>
+<pre>.caja-color {
+  background: red;
+}
+
+@media (min-width: 768px) {
+  .caja-color {
+    background: blue;
+  }
+}</pre>
+        <p>Esta caja cambia de color cuando se cambia el ancho de la ventana:</p>
+        <div class="caja-color">Cambio de color</div>
+        <ul class="mt-2">
+            <li>Menos de 576 px: rojo</li>
+            <li>Desde 576 px: naranja</li>
+            <li>Desde 768 px: azul</li>
+            <li>Desde 992 px: verde</li>
+        </ul>
+
+        <hr class="my-4">
+
+        <!-- 2.7 -->
+        <h2 id="t27">2.7 Pseudo-elementos</h2>
+        <p>Se escriben con dos puntos dobles. Sirven para darle estilo a una parte del elemento.</p>
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <div class="card h-100"><div class="card-body">
+                    <h5 class="card-title">::before y ::after</h5>
+                    <p class="antes-despues">Texto del medio</p>
+<pre>p::before { content: "[ "; }
+p::after { content: " ]"; }</pre>
+                </div></div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <div class="card h-100"><div class="card-body">
+                    <h5 class="card-title">::first-letter</h5>
+                    <p class="primera-letra">Esta es la primera letra de un párrafo.</p>
+<pre>p::first-letter {
+  font-size: 2rem;
+  color: red;
+}</pre>
+                </div></div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <div class="card h-100"><div class="card-body">
+                    <h5 class="card-title">::first-line</h5>
+                    <p class="primera-linea">La primera línea de este párrafo sale en negrita y de otro color, el resto se ve normal aunque se cambie el ancho de la ventana.</p>
+<pre>p::first-line {
+  font-weight: bold;
+  color: blue;
+}</pre>
+                </div></div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <div class="card h-100"><div class="card-body">
+                    <h5 class="card-title">::selection</h5>
+                    <p class="seleccion">Selecciona este texto con el mouse.</p>
+<pre>p::selection {
+  background: yellow;
+  color: black;
+}</pre>
+                </div></div>
+            </div>
+        </div>
+
+        <hr class="my-4">
+
+        <!-- 2.8 -->
+        <h2 id="t28">2.8 Pseudo-clases</h2>
+        <p>Se escriben con dos puntos. Cambian el estilo según el estado o la posición del elemento.</p>
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <div class="card h-100"><div class="card-body">
+                    <h5 class="card-title">:hover</h5>
+                    <p>Cuando se pasa el mouse por encima.</p>
+                    <button type="button" class="btn btn-primary boton-hover">Pasa el mouse</button>
+<pre class="mt-3">.boton:hover {
+  background: orange;
+}</pre>
+                </div></div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <div class="card h-100"><div class="card-body">
+                    <h5 class="card-title">:focus</h5>
+                    <p>Cuando se hace clic en el campo.</p>
+                    <input type="text" class="form-control campo-focus" placeholder="Haz clic aquí">
+<pre class="mt-3">input:focus {
+  background: lightyellow;
+}</pre>
+                </div></div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <div class="card h-100"><div class="card-body">
+                    <h5 class="card-title">:first-child y :last-child</h5>
+                    <ul class="lista">
+                        <li>Primero</li>
+                        <li>Segundo</li>
+                        <li>Tercero</li>
+                    </ul>
+<pre>li:first-child { color: green; }
+li:last-child { color: red; }</pre>
+                </div></div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <div class="card h-100"><div class="card-body">
+                    <h5 class="card-title">:nth-child()</h5>
+                    <table class="table table-sm tabla-pares">
+                        <tr><td>Fila 1</td></tr>
+                        <tr><td>Fila 2</td></tr>
+                        <tr><td>Fila 3</td></tr>
+                        <tr><td>Fila 4</td></tr>
+                    </table>
+<pre>tr:nth-child(even) {
+  background: lightgray;
+}</pre>
+                </div></div>
+            </div>
+        </div>
+
+        <hr class="my-4">
+
+        <!-- 2.9 -->
+        <h2 id="t29">2.9 Z-index</h2>
+        <p>Cuando hay elementos encima de otros, el z-index decide cuál se ve arriba. El número más alto queda encima. Para que funcione el elemento tiene que tener position (relative, absolute, fixed o sticky).</p>
+<pre>.azul { position: absolute; z-index: 1; }
+.amarilla { position: absolute; z-index: 3; }
+.roja { position: absolute; z-index: 2; }</pre>
+        <div class="zona">
+            <div class="cuadro azul">Azul 1</div>
+            <div class="cuadro amarilla">Amarilla 3</div>
+            <div class="cuadro roja">Roja 2</div>
+        </div>
+        <p>La amarilla queda arriba porque tiene el número más alto.</p>
+        <p>Bootstrap ya trae z-index para sus componentes: dropdown 1000, navbar sticky 1020, offcanvas 1045, modal 1055, popover 1070, tooltip 1080 y toast 1090.</p>
+        <button type="button" class="btn btn-outline-primary mb-4" data-bs-toggle="modal" data-bs-target="#modal">Abrir modal</button>
+
+    </div>
+
+    <footer class="bg-dark text-white py-3">
+        <div class="container">Temas de CSS 2.1 a 2.9</div>
+    </footer>
+
+    <div class="modal fade" id="modal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modal</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">Este modal tiene z-index 1055 y por eso queda encima de la barra de navegación, que tiene 1020.</div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

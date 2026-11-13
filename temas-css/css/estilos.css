@@ -1,0 +1,133 @@
+html {
+    scroll-behavior: smooth;
+}
+
+h2 {
+    padding-top: 60px;
+    margin-top: -40px;
+}
+
+pre {
+    background: #f1f1f1;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+/* 2.3 herencia */
+.padre {
+    color: darkgreen;
+    border: 2px dashed darkgreen;
+    padding: 10px;
+}
+
+/* 2.4 especificidad (dentro de .demo-esp para que no afecte los demás párrafos) */
+.demo-esp p { color: red; }
+.demo-esp .nota { color: blue; }
+.demo-esp #especial { color: green; }
+
+/* 2.5 flex y grid */
+.flex {
+    display: flex;
+    gap: 8px;
+    padding: 8px;
+    border: 1px dashed gray;
+}
+
+.flex div, .grid div {
+    background: #0d6efd;
+    color: white;
+    padding: 10px 16px;
+    text-align: center;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.caja {
+    background: #cfe2ff;
+    border: 1px solid #9ec5fe;
+    padding: 12px;
+    text-align: center;
+    font-size: 14px;
+}
+
+/* 2.6 media queries */
+.caja-color {
+    background: red;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+@media (min-width: 576px) {
+    .caja-color { background: orange; }
+}
+
+@media (min-width: 768px) {
+    .caja-color { background: blue; }
+}
+
+@media (min-width: 992px) {
+    .caja-color { background: green; }
+}
+
+/* 2.7 pseudo-elementos */
+.antes-despues::before { content: "[ "; color: red; }
+.antes-despues::after { content: " ]"; color: red; }
+
+.primera-letra::first-letter {
+    font-size: 2rem;
+    color: red;
+}
+
+.primera-linea::first-line {
+    font-weight: bold;
+    color: blue;
+}
+
+.seleccion::selection {
+    background: yellow;
+    color: black;
+}
+
+/* 2.8 pseudo-clases */
+.boton-hover:hover {
+    background: orange;
+    border-color: orange;
+    color: black;
+}
+
+.campo-focus:focus {
+    background: lightyellow;
+}
+
+.lista li:first-child { color: green; }
+.lista li:last-child { color: red; }
+
+.tabla-pares tr:nth-child(even) td {
+    background: lightgray;
+}
+
+/* 2.9 z-index */
+.zona {
+    position: relative;
+    height: 150px;
+}
+
+.cuadro {
+    position: absolute;
+    width: 120px;
+    height: 80px;
+    padding: 8px;
+    border: 2px solid black;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.azul { left: 10px; top: 10px; background: lightblue; z-index: 1; }
+.amarilla { left: 70px; top: 40px; background: gold; z-index: 3; }
+.roja { left: 130px; top: 70px; background: lightcoral; z-index: 2; }
